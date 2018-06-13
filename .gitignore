@@ -1,0 +1,17 @@
+# biomhandler binary & virtualenv
+dist/*
+virtualenv/*
+build/**
+ignore/**
+
+# compiled python
+*.pyc
+
+# Logs
+*.log
+
+# OSX
+.DS_Store
+
+# dotenv environment variables file
+.env
