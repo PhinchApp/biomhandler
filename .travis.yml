@@ -1,0 +1,7 @@
+language: python
+python:
+  - "2.7"
+os: osx
+osx_image: xcode6.4
+install: cat requirements.txt | xargs -n 1 -L 1 pip install
+script: pyinstaller biomhandler.spec
