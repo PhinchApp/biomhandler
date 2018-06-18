@@ -1,12 +1,12 @@
 # language: python
 # python:
   # - "2.7"
-language: ruby
-ruby: 2.3
+# language: ruby
+# ruby: 2.3
 os: osx
 osx_image: xcode6.4
 before_install: |
-  brew install python;
+  HOMEBREW_NO_AUTO_UPDATE=1 brew install python;
   virtualenv venv -p python;
   source venv/bin/activate;
 install: cat requirements.txt | xargs -n 1 -L 1 pip install
