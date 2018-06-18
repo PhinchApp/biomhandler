@@ -1,14 +1,20 @@
-# language: python
-# python:
-  # - "2.7"
-# language: ruby
-# ruby: 2.3
-os: osx
+os:
+- linux
+- osx
 osx_image: xcode6.4
 before_install: |
-  HOMEBREW_NO_AUTO_UPDATE=1 brew install python;
-  pip install virtualenv;
+  if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
+    HOMEBREW_NO_AUTO_UPDATE=1 brew install python;
+    pip install virtualenv;
+  fi
   virtualenv venv -p python;
   source venv/bin/activate;
 install: cat requirements.txt | xargs -n 1 -L 1 pip install
 script: pyinstaller biomhandler.spec
+deploy:
+  provider: releases
+  api_key:
+    secure: gUHeZwba5QEZiQYQdYjkKCDC+sKzcWigkSmCt0W042GQcIOYlWgL+TRRRn0Rn2EPUGo43jWGXGPJ3JoxBWnzkHix4aRusIMtLIBQIHPG5WVMySBtm1toAmbKx3UU5cKcurc/FHuYQuGw/Sl3/0//yT2KqiIGnv89CNauPNOQrNK6e5N+xnF5RXepToxcDp/pXpft+6+i5W19ZEDQSMyAlf4gF9RzgWPbaE6KtslXwlpyBnU/N5W3/isdihLnww6rUivFBDNOAInr6pRolNDBL8Hr0EYNxHrBbbY/1qQbGx6FTl0AH4WT2hnewf6rrfnb80Mfn1D5pK9Y3bS9+an/ju4mVkT2q6FH4EQ21yKpcM6YqC8b8Bkd2eCu1Uk8soD2ocITeIVyRSaqCV2ou/7/11/kV/caU3gvKKI/KYzZ1NVbNExth9iZDW68s52DJDS+jWb7HRx48cK2MQnlbQX794IIU4wpbZEWXs7Nf2nKm0pPan0q5Ibs7dhITBimVdyeYYQFZrnRENljoJAs0JLFROcwtI1owj8cx4fZXMp5Z6aaHKI3hINb1ynfO5mn3aes2f5u2BG8WzcmerahnrNTiliT4tt+akbbpFZ6aB0mNZ1ZmID65ngyKMSwVStFy5jUjtWHhdpWZyP2/5woV2IjT/dw0yKS6QfCHyl0jEH/SnA=
+  file: dist/biomhandler
+  on:
+    repo: PhinchApp/biomhandler
