@@ -18,5 +18,4 @@ deploy:
   file: dist/biomhandler
   skip_cleanup: true
   on:
-    tags: true
     repo: PhinchApp/biomhandler
