@@ -11,8 +11,6 @@ before_install: |
   source venv/bin/activate;
 install: cat requirements.txt | xargs -n 1 -L 1 pip install
 script: pyinstaller biomhandler.spec
-
-
 deploy:
   provider: releases
   api_key:
