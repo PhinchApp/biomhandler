@@ -13,6 +13,7 @@ install: cat requirements.txt | xargs -n 1 -L 1 pip install
 script: pyinstaller biomhandler.spec
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: "NxVnC8XwX+DDLsev0YC6Mu12ToXWsVgg1vfuJyo7zoGFlA8XITo9nvo0ujGweUQqveipj2JnHNLw67IYCwp0T0o1qni7duzR7SMTf4zfDrmhVurvwnyKXDxSCiDr0886BBRlEsS+1x3by5aEUGUU6HHyzysx4672YOV/JqW76/GfI4ozhGKJ7pCl/m2gerA0i/GKsd9gj5EqMdzyskjvaIgJ3V4a7CUPWdH5sJ0f4VxBx6xv6+FiRtBJthKetiZnNe6io+J6WgtZQiGaK2JXFuzwXxPplVJxzubEGxway+jX5Gu9o34xNyJcW1gQgRa+LuusJ/1NEBXNNh9xIcTDc9UB7+50xmSRe6Yk3PgtN7Jmd79BCS/ysvO4beBTpdb9AOE3QVm2fMoy2y614jk/ctosRanuGIe0yjenOzOe5JnwnoSyT4O+KgUF6ZPKm/P0dLsDIwvu4nsH5TlgKIdWG5legNzseiB2VtiSUEL3d+LJOsEnp93xtPQa0wR+sD6bILjlOY7XzXMxXRivow1bNOFIMt3WRBYlVo8wH8ACfYK4UO/natbCtxfqk2fr4xh1egLkVQQygTq48kf9mvK5lsDLOOT84bSi6YaMOxbOpWPPZqeRtgq/LUAfKfyZtOjcYe8HCBwf2EII8lLjS3s624tiN50CN4BhkhREbQVZf0s="
   file: dist/biomhandler
