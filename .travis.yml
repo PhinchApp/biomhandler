@@ -11,6 +11,10 @@ before_install: |
   source venv/bin/activate;
 install: cat requirements.txt | xargs -n 1 -L 1 pip install
 script: pyinstaller biomhandler.spec
+before_deploy:
+  - git config --local user.name "jprctr"
+  - git config --local user.email "james@pitchinteractive.com" 
+  - git tag "$TRAVIS_OS_NAME-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
   provider: releases
   skip_cleanup: true
