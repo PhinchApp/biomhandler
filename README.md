@@ -8,20 +8,18 @@ A python script to convert hdf5 biom files to json. Used in [Phinch](https://git
 
 ## Requirements
 
-- Python 2 ([installation])(https://wiki.python.org/moin/BeginnersGuide/Download)
-- Pip ([installation])(https://pip.pypa.io/en/stable/installing/)
-- Virtualenv ([installation])(https://virtualenv.pypa.io/en/stable/installation/)
+- Python 2 (https://wiki.python.org/moin/BeginnersGuide/Download)
+- Pip (https://pip.pypa.io/en/stable/installing/)
+- Virtualenv (https://virtualenv.pypa.io/en/stable/installation/)
 
 ## Install
 
 First, clone the repo via git:
-
 ```bash
 git clone https://github.com/PhinchApp/biomhandler.git
 ```
 
 Then, create and active a python virtual environment:
-
 ```bash
 cd biomhandler
 virtualenv ./virtualenv
@@ -29,7 +27,6 @@ source ./virtualenv/bin/activate
 ```
 
 Or, on Windows:
-
 ```bash
 cd biomhandler
 virtualenv ./virtualenv
@@ -37,7 +34,6 @@ virtualenv ./virtualenv
 ```
 
 Finally, install dependencies:
-
 ```bash
 cat requirements.txt | xargs -n 1 -L 1 pip install
 ```
@@ -56,6 +52,7 @@ If you're on a windows system edit `biomhandler.spec` before packaging so that t
 pathex=['C:/Users/pitch/Documents/biomhandler/virtualenv/Lib/site-packages/scipy/extra-dll']
 ```
 
+To package, run:
 ```bash
 pyinstaller biomhandler.spec
 ```
@@ -63,13 +60,11 @@ pyinstaller biomhandler.spec
 ## Usage
 
 Using Python:
-
 ```bash
 python biomhandler.py path-to-hdf5-biom-file
 ```
 
 Using the standablone executable:
-
 ```bash
 ./dist/biomhandler path-to-hdf5-biom-file
 ```
