@@ -5,7 +5,7 @@ block_cipher = None
 # from PyInstaller.utils.hooks import collect_dynamic_libs
 
 a = Analysis(['biomhandler.py'],
-             pathex=['/Users/jamesproctor_Pitch/Dropbox/Documents/Professional/Pitch/Projects/Phinch/electron-loader'],
+             pathex=['C:/Users/pitch/Documents/biomhandler/virtualenv/Lib/site-packages/scipy/extra-dll'],
              binaries=[],
              datas=[],
              hiddenimports=['scipy._lib.messagestream','pandas._libs.tslibs.timedeltas','biom'],
