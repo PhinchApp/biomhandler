@@ -10,7 +10,7 @@ A python script to convert hdf5 biom files to json. Used in [Phinch](https://git
 
 - Python 2 (https://wiki.python.org/moin/BeginnersGuide/Download)
 - Pip (https://pip.pypa.io/en/stable/installing/)
-- Virtualenv (https://virtualenv.pypa.io/en/stable/installation/)
+- Virtualenv (https://virtualenv.pypa.io/en/stable/installation.html)
 
 ## Install
 
